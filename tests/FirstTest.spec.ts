@@ -13,3 +13,10 @@ import { test, expect } from '@playwright/test';
     // Expect a title "to contain" a substring.
     await expect(page).toHaveTitle(/Playwright/);
     });
+
+    test('Second test', async ({ page }) => {
+        await page.goto('https://lntu.edu.ua/uk');
+        await page.waitForTimeout(3000);
+        const pageTitle = await page.locator('//div[contains(@class, "menu-item")]').textContent();
+        expect(pageTitle).toContain('Головна');
+    });
