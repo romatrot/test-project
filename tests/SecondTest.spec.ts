@@ -23,5 +23,5 @@ import { test , expect } from '@playwright/test';
         await page.fill('//input[@id="query-builder-test"]','romatrot/test-project'); 
         await page.locator('//span[@class=""]').click();
         await page.locator('//span[@class="Text-sc-17v1xeu-0 qaOIC search-match"]').click();
-        expect(page.url()).toBe('https://github.com/romatrot/test-project');
+        expect(page.url()).toBe('https://github.com/search?q=romatrot%2Ftest-project&type=repositories');
     })
